@@ -1,7 +1,8 @@
 NAME=fratol
 
 CC=gcc
-FLAGS=-Wall
+FLAGS=`sdl2-config --cflags --libs`
+FLAGS+=-Wall
 FLAGS+=-Werror
 FLAGS+=-Wextra
 
