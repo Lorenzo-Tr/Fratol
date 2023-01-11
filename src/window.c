@@ -1,7 +1,7 @@
 #include<SDL2/SDL.h>
 #include<stdio.h>
 
-int main(int argc, char** argv)
+int window()
 {
     /* Initialisation simple */
     if (SDL_Init(SDL_INIT_VIDEO) != 0 )
