@@ -1,4 +1,4 @@
-NAME=bsq
+NAME=fratol
 
 CC=gcc
 FLAGS=-Wall
@@ -21,27 +21,13 @@ ifeq ($(OPTI), 1)
 endif
 
 SRC_PATH=src/
-SRC_NAME=bsq.c\
-  error.c\
-  ft_split.c\
-  ft_strdup.c\
-  ft_strchr.c\
-  get_map.c\
-  str_len.c\
-  solver.c\
-  read_fd.c\
-  math.c\
-  free.c\
-  print.c\
-  get_metadata.c\
-  get_board.c
+SRC_NAME=main.c
 
 
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 
-INC_PATH=src/include/
-INC_NAME=error.h\
-  main.h
+INC_PATH=include/
+INC_NAME=
 
 INC=$(addprefix $(INC_PATH), $(INC_NAME))
 
