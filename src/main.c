@@ -1,16 +1,18 @@
 #include "main.h"
 
 int main(int argc, char **argv){
-  unsigned int height;
-  unsigned int length;
-  char* name;
-  if(argc != 3){
+  t_params params;
+
+  if(argc != 4){
     printf("Invalid arguments\n");
     return(1);
   }
-  height = atoi(argv[1]);
-  weight = atoi(argv[2]);
-  name = argv[3];
+
+  params.height = (unsigned int) atoi(argv[1]);
+  params.weight = atoi(argv[2]);
+  params.name = argv[3];
+
+  fractal(params);
 
   return (0);
 }

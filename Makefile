@@ -1,7 +1,7 @@
 NAME=fratol
 
 CC=gcc
-FLAGS=`sdl2-config --cflags --libs`
+FLAGS=$(shell sdl2-config --cflags --libs)
 FLAGS+=-Wall
 FLAGS+=-Werror
 FLAGS+=-Wextra
@@ -22,7 +22,8 @@ ifeq ($(OPTI), 1)
 endif
 
 SRC_PATH=src/
-SRC_NAME=main.c
+SRC_NAME=main.c\
+					fractal.c
 
 
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
