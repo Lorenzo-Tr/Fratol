@@ -12,6 +12,17 @@ static bool check_weigth(unsigned int weight){
 	return(weight <= WEIGHT_MAX);
 }
 
+static bool check_name(char* name){
+	int len;
+	len = sizeof(LIST_OF_NAME)/sizeof(LIST_OF_NAME[0]);
+	for(unsigned int i = 0; i < len; i++){
+		if(!strcmp(LIST_OF_NAME[i], name)){
+			return(true);
+		}
+	}
+	return(false);
+}
+
 int fractal(t_params params){
 	//printf("%d, %d, et %s", params.weight, params.height, params.name);
 	if(!check_weigth(params.weight)){
