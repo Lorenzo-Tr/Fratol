@@ -22,9 +22,8 @@ ifeq ($(OPTI), 1)
 endif
 
 SRC_PATH=src/
-SRC_NAME=main.c
-
-
+SRC_NAME=main.c\
+		 window.c
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 
 INC_PATH=include/
