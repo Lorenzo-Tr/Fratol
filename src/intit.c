@@ -1,5 +1,6 @@
 #include "main.h"
 
-int fractal(t_env *env){
+
+int init(t_env *env){
   return (0);
 }
