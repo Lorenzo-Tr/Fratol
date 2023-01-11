@@ -3,9 +3,7 @@
 #include <stdlib.h>
 
 
-void SDL_GL_GetDrawableSize(SDL_Window * window, int *w,int *h);
-
-int main(int argc, char *argv[])
+int screen()
 {
 	int w, h ;
     if(0 != SDL_Init(SDL_INIT_VIDEO))
