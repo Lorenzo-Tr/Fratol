@@ -27,7 +27,7 @@ SRC_NAME=main.c
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 
 INC_PATH=include/
-INC_NAME=
+INC_NAME=main.h
 
 INC=$(addprefix $(INC_PATH), $(INC_NAME))
 
