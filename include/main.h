@@ -1,10 +1,17 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <SDL2/SDL.h>
-//#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_timer.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-#define SCREEN_WIDTH 640
-#define SCREEN_HEIGHT 480
+typedef struct s_parameters{
+	unsigned int height;
+	unsigned int weight;
+	char *name;
+} t_params;
 
-int window();
+int fractal(t_params params);
+
+#endif
