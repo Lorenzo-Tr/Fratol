@@ -38,13 +38,16 @@ OBJS=$(OBJ_NAME:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) SDL
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 	
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
 	@printf "Compiling $@"
 	@printf "                     \\n\r"
 	@$(CC) $(FLAGS) -I$(INC_PATH) -o $@ -c $<
+
+SDL: 
+	@sudo ./install_sdl2
 
 clean:
 	rm -rf $(OBJ_PATH)*.o
