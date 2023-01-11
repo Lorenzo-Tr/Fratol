@@ -10,7 +10,6 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    {
         /* Création de la fenêtre */
         SDL_Window* pWindow = NULL;
         pWindow = SDL_CreateWindow("Fenetre",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,800,500,SDL_WINDOW_SHOWN);
@@ -29,7 +28,6 @@ int main(int argc, char** argv)
         {
             fprintf(stderr,"Erreur de création de la fenêtre: %s\n",SDL_GetError());
         }
-    }
 
     SDL_Quit();
 
