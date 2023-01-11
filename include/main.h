@@ -11,3 +11,7 @@ typedef struct s_parameters{
 	unsigned int weight;
 	char *name;
 } t_params;
+
+int fractal(t_params params);
+
+#endif
