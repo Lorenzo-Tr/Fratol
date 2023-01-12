@@ -1,7 +1,9 @@
 NAME=fratol
 
+$(shell mkdir -p obj/ini obj/renderer)
+
 CC=gcc
-FLAGS=$(shell sdl2-config --cflags --libs)
+FLAGS=-ISDL/include 
 FLAGS+=-Wall
 FLAGS+=-Werror
 FLAGS+=-Wextra
@@ -23,7 +25,12 @@ endif
 
 SRC_PATH=src/
 SRC_NAME=main.c\
-	fractal.c
+	fractal.c\
+	error.c\
+	init.c\
+	render.c\
+	ini/check.c\
+	ini/window.c
   
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 
