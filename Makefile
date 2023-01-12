@@ -3,7 +3,7 @@ NAME=fratol
 $(shell mkdir -p obj/ini obj/renderer)
 
 CC=gcc
-FLAGS=-ISDL/include 
+FLAGS=-ISDL/include -LSDL/build/build -Wl,-rpath,SDL/build/build -Wl,--enable-new-dtags -lSDL2 
 FLAGS+=-Wall
 FLAGS+=-Werror
 FLAGS+=-Wextra
