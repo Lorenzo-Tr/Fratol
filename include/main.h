@@ -13,9 +13,14 @@ typedef struct s_parameters {
 } t_params;
 
 typedef struct s_env {
-  t_params paramaters;
+  t_params parameters;
   unsigned char err_code;
 } t_env;
+
+typedef struct s_complex {
+  float real;
+  float immaginary;
+} t_complex;
 
 int check(t_params params);
 int fractal(t_env* env);
