@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define POW(X) ((X) * (X))
+
 typedef struct s_parameters {
   unsigned int height;
   unsigned int weight;
@@ -25,5 +27,6 @@ typedef struct s_complex {
 int check(t_params params);
 int fractal(t_env* env);
 int init(t_env* env);
+void julia(t_env *env);
 
 #endif
