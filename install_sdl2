@@ -1,0 +1,7 @@
+#!/bin/bash
+git clone https://github.com/libsdl-org/SDL.git -b SDL2
+mkdir SDL/build
+cd SDL/build
+../configure
+make
+sudo make install

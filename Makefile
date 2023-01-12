@@ -1,7 +1,8 @@
 NAME=fratol
 
 CC=gcc
-FLAGS=-Wall
+FLAGS=$(shell sdl2-config --cflags --libs)
+FLAGS+=-Wall
 FLAGS+=-Werror
 FLAGS+=-Wextra
 
@@ -22,9 +23,9 @@ endif
 
 SRC_PATH=src/
 SRC_NAME=main.c\
-		 window.c
-
-
+		 window.c\
+	     fractal.c
+  
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 
 INC_PATH=include/
@@ -38,13 +39,16 @@ OBJS=$(OBJ_NAME:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) SDL
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 	
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
 	@printf "Compiling $@"
 	@printf "                     \\n\r"
 	@$(CC) $(FLAGS) -I$(INC_PATH) -o $@ -c $<
+
+SDL: 
+	@sudo ./install_sdl2
 
 clean:
 	rm -rf $(OBJ_PATH)*.o
