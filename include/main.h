@@ -26,15 +26,12 @@ typedef struct s_complex {
   float immaginary;
 } t_complex;
 
-int check(t_params params);
-int fractal(t_env* env);
-int init(t_env* env);
 void error_handler();
 int check(t_params* params);
 int fractal(int argc, char** argv, t_env* env);
 int init(int argc, char** argv, t_env* env);
 int render(t_env* env);
 int window();
-void julia(t_env *env);
+void julia(t_env* env);
 
 #endif
