@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-int main(int argc, char** argv)
+int window()
 {
 	bool en_marche = true ;
 	SDL_Event ev ; // on créer une variable evenement
