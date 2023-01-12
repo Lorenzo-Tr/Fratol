@@ -43,9 +43,9 @@ OBJ_PATH=obj/
 OBJ_NAME=$(addprefix $(OBJ_PATH), $(SRC_NAME))
 OBJS=$(OBJ_NAME:.c=.o)
 
-all: $(NAME)
+all: SDL $(NAME)
 
-$(NAME): $(OBJS) SDL
+$(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 	
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
