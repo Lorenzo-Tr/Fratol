@@ -12,13 +12,15 @@
 
 typedef struct s_parameters {
   unsigned int height;
-  unsigned int weight;
+  unsigned int width;
   char* name;
 } t_params;
 
 typedef struct s_env {
   t_params parameters;
   unsigned char err_code;
+  SDL_Window* pWindow;
+  SDL_DisplayMode display;
 } t_env;
 
 typedef struct s_complex {
@@ -26,12 +28,12 @@ typedef struct s_complex {
   float immaginary;
 } t_complex;
 
-void error_handler();
-int check(t_params* params);
+void error_handler(t_env* env);
+int check_parameters(t_env* env);
 int fractal(int argc, char** argv, t_env* env);
 int init(int argc, char** argv, t_env* env);
 int render(t_env* env);
-int window();
+int window(t_env* env);
 void julia(t_env* env);
 
 #endif

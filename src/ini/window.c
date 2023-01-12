@@ -1,40 +1,22 @@
 #include "main.h"
-int window() {
-  bool en_marche = true;
-  SDL_Event ev;
+int window(t_env* env) {
+  if (SDL_Init(SDL_INIT_VIDEO) != 0)
+    return (ERROR_SDL_INIT_VIDEO);
 
-  if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-    fprintf(stdout, "Echec del'initialisation de la SDL (%s)\n",
-            SDL_GetError());
+  if (SDL_GetCurrentDisplayMode(0, &env->display) != 0)
+    return (ERROR_SDL_DISPLAY_MODE);
 
-    return (-1);
-  }
+  env->pWindow = SDL_CreateWindow(
+      "Fratol", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+      env->parameters.width, env->parameters.height, SDL_WINDOW_HIDDEN);
 
-  SDL_Window* pWindow;
+  if (!env->pWindow)
+    return (ERROR_SDL_INIT_WINDOW);
 
-  pWindow =
-      SDL_CreateWindow("Fenetre", SDL_WINDOWPOS_UNDEFINED,
-                       SDL_WINDOWPOS_UNDEFINED, 800, 500, SDL_WINDOW_SHOWN);
+  SDL_Surface* screenSurface;
+  screenSurface = SDL_GetWindowSurface(env->pWindow);
+  SDL_FillRect(screenSurface, NULL,
+               SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
 
-  if (pWindow) {
-    SDL_Surface* screenSurface = NULL;
-    screenSurface = SDL_GetWindowSurface(pWindow);
-    SDL_FillRect(screenSurface, NULL,
-                 SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
-
-  } else {
-    fprintf(stderr, "Erreur de création de la fenêtre : %s\n", SDL_GetError());
-  }
-
-  while (en_marche) {
-    while (SDL_PollEvent(&ev) != 0) {
-      if (ev.type == SDL_QUIT) {
-        en_marche = false;
-      }
-      SDL_UpdateWindowSurface(pWindow);
-    }
-  }
-  SDL_DestroyWindow(pWindow);
-  SDL_Quit();
   return (0);
 }

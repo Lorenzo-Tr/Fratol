@@ -29,7 +29,7 @@ SRC_NAME=main.c\
 	error.c\
 	init.c\
 	render.c\
-	ini/check.c\
+	ini/check_parameters.c\
 	ini/window.c
   
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))

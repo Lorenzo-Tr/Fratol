@@ -1,20 +1,18 @@
 #include "main.h"
 
 int init(int argc, char** argv, t_env* env) {
-  if (argc != 4) {
-    printf("Invalid arguments\n");
-    return (1);
-  }
+  if (argc != 4)
+    return (ERROR_INVALID_ARGC);
 
   env->parameters.height = (unsigned int)atoi(argv[1]);
-  env->parameters.weight = atoi(argv[2]);
+  env->parameters.width = atoi(argv[2]);
   env->parameters.name = argv[3];
 
-  if ((env->err_code = check(&env->parameters)) != ERROR_NONE) {
+  window(env);
+
+  if ((env->err_code = check_parameters(env)) != ERROR_NONE) {
     return (env->err_code);
   }
-
-  window();
 
   return (0);
 }
