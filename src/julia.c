@@ -39,11 +39,22 @@ static void julia_color_pixel(t_complex *position){
 
 //Screen
 void julia(t_env *env){
+	(void) env;
+
 	t_complex pixel = {0, 0};
-	for(unsigned int i = 0; i < env->parameters.weight; i++){
-		for(unsigned int j = 0; j < env->parameters.height; j++){
-			pixel.real = i/env->parameters.weight;
-			pixel.immaginary = j/env->parameters.height;
+	float x_start = -1;
+	float x_end = 1;
+	float y_start = -1.2;
+	float y_end = 1.2;
+	float zoom = 100;
+
+	float image_x = (x_end - x_start) * zoom;
+	float image_y = (y_end - y_start) * zoom;
+
+	for(unsigned int i = 0; i < image_x; i++){
+		for(unsigned int j = 0; j < image_y; j++){
+			pixel.real = i/zoom + 1;
+			pixel.immaginary = j/zoom + 1;
 			julia_color_pixel(&pixel);
 		}
 		printf("\n");
