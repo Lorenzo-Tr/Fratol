@@ -3,8 +3,8 @@ NAME=fratol
 $(shell mkdir -p obj/ini obj/renderer)
 
 CC=gcc
-FLAGS=-ISDL/include -LSDL/build/build -Wl,-rpath,SDL/build/build -Wl,--enable-new-dtags -lSDL2 
-FLAGS+=-Wall
+SDLFLAGS=-ISDL/include -LSDL/build/build -Wl,-rpath,SDL/build/build -Wl,--enable-new-dtags -lSDL2 
+FLAGS=-Wall
 FLAGS+=-Werror
 FLAGS+=-Wextra
 
@@ -46,7 +46,7 @@ OBJS=$(OBJ_NAME:.c=.o)
 all: SDL $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) $(SDLFLAGS) -o $(NAME)
 	
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
 	@printf "Compiling $@"
