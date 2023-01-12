@@ -23,7 +23,7 @@ endif
 
 SRC_PATH=src/
 SRC_NAME=main.c\
-	fractal.c
+	mandelbrot.c
   
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 

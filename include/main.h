@@ -25,5 +25,6 @@ typedef struct s_complex {
 int check(t_params params);
 int fractal(t_env* env);
 int init(t_env* env);
+int mandelbrot();
 
 #endif

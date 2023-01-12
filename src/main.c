@@ -1,9 +1,9 @@
 #include "main.h"
 
-int main(int argc, char** argv) {
-  t_env env;
+int main() {
+/* t_env env;
 
-  if (argc != 4) {
+ if (argc != 4) {
     printf("Invalid arguments\n");
     return (1);
   }
@@ -12,7 +12,8 @@ int main(int argc, char** argv) {
   env.parameters.weight = atoi(argv[2]);
   env.parameters.name = argv[3];
 
-  fractal(&env);
+  fractal(&env);*/
+	mandelbrot();
 
   return (0);
 }
