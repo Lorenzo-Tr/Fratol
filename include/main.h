@@ -12,12 +12,8 @@
 #define ITERATION_MAX 150
 
 typedef struct s_colors{
-  int r_max;
-  int g_max;
-  int b_max;
-  int r_min;
-  int g_min;
-  int b_min;
+  unsigned char* rgb[3];
+  int nb_colors;
 } t_colors;
 
 typedef struct s_complex {
