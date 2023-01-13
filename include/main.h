@@ -20,7 +20,7 @@ typedef struct s_fractal_coordinates {
   float x_min;
   float x_max;
   float y_min;
-  float x_max;
+  float y_max;
   float zoom_w;
   float zoom_h;
 } t_fractal;
@@ -69,5 +69,8 @@ int window(t_env* env);
 void julia(t_env* env);
 void mandelbrot(t_env* env);
 void update_event(t_env* env);
+void setBlack(t_env* env, int x, int y);
+void setWhite(t_env* env, int x, int y);
+void init_fractal(t_env* env);
 
 #endif

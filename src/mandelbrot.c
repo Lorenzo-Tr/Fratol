@@ -17,7 +17,7 @@ void mandelbrot(t_env* env)
 		{
 
 			c.real = (float)j/env->coordinates.zoom_w + env->coordinates.x_min;
-			c.imaginary = (float)i/env->coordinate.zoom_h + env->coordinates.y_min;
+			c.imaginary = (float)i/env->coordinates.zoom_h + env->coordinates.y_min;
 			z.real = 0;
 			z.imaginary = 0;
 			iteration = 0;
@@ -32,16 +32,12 @@ void mandelbrot(t_env* env)
 
 			if(iteration==nb_iteration)
 			{
-				//dessiner le pixel de coordonnees (i,j)
-				printf("x");
-				//printf("pixel noir sur %d %d \n",i,j);
+				setBlack(env, j, i);
 			}
 			else
 			{
-				printf(".");
-				//printf("pixel blanc sur %d %d \n",i,j);
+				setWhite(env, j, i);
 			}
 		}
-		printf("\n");
 	}
 }

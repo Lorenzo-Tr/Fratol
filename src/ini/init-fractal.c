@@ -20,12 +20,12 @@ static void init_zoom(t_env* env){
 }
 
 void init_fractal(t_env* env){
-	if(env->parameters.name == "Mandelbrot"){
-		init_mandelbrot(&env);
-	} else if (env->parameters == "Julia"){
-		init_julia(&env);
+	if(!strcmp(env->parameters.name, "Mandelbrot")){
+		init_mandelbrot(env);
+	} else if(!strcmp(env->parameters.name, "Julia")){
+		init_julia(env);
 	} else {
 		//Nothing
 	}
-	init_zoom();
+	init_zoom(env);
 }

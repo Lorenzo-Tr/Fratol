@@ -9,11 +9,13 @@ int init(int argc, char** argv, t_env* env) {
   env->parameters.name = argv[3];
 
   window(env);
-  key_init(env);
+  //key_init(env);
 
   if ((env->err_code = check_parameters(env)) != ERROR_NONE) {
     return (env->err_code);
   }
+
+  init_fractal(env);
 
   return (0);
 }
