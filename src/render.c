@@ -5,15 +5,8 @@ int render(t_env* env) {
 
   render_flags = true;
   while (render_flags) {
-    SDL_Event event;
     SDL_ShowWindow(env->pWindow);
-    while (SDL_PollEvent(&event)) {
-      switch (event.type) {
-        case SDL_QUIT:
-          render_flags = false;
-          break;
-      }
-    }
+    update_event(env, render_flags);
     SDL_UpdateWindowSurface(env->pWindow);
   }
 

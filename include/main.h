@@ -25,7 +25,7 @@ typedef struct s_env {
 
 typedef struct s_complex {
   float real;
-  float immaginary;
+  float imaginary;
 } t_complex;
 
 void error_handler(t_env* env);
@@ -35,5 +35,6 @@ int init(int argc, char** argv, t_env* env);
 int render(t_env* env);
 int window(t_env* env);
 void julia(t_env* env);
+void update_event(t_env* env, bool render_flags);
 
 #endif
