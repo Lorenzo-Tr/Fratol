@@ -49,6 +49,7 @@ typedef struct s_env {
   t_params parameters;
   unsigned char err_code;
   SDL_Window* pWindow;
+  SDL_Surface* screenSurface;
   SDL_DisplayMode display;
   t_fractal coordinates;
   t_input input;
