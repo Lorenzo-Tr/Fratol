@@ -1,4 +1,5 @@
 #include "main.h"
+
 int window(t_env* env) {
   if (SDL_Init(SDL_INIT_VIDEO) != 0)
     return (ERROR_SDL_INIT_VIDEO);
@@ -13,10 +14,10 @@ int window(t_env* env) {
   if (!env->pWindow)
     return (ERROR_SDL_INIT_WINDOW);
 
-  SDL_Surface* screenSurface;
-  screenSurface = SDL_GetWindowSurface(env->pWindow);
-  SDL_FillRect(screenSurface, NULL,
-               SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+  //SDL_Surface* screenSurface;
+  env->screenSurface = SDL_GetWindowSurface(env->pWindow);
+  SDL_FillRect(env->screenSurface, NULL,
+               SDL_MapRGB(env->screenSurface->format, 0xFF, 0xFF, 0xFF));
 
   return (0);
 }

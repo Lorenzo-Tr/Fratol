@@ -31,7 +31,10 @@ SRC_NAME=main.c\
 	render.c\
 	ini/check_parameters.c\
 	ini/window.c\
-	renderer/update_event.c
+	renderer/update_event.c\
+	mandelbrot.c\
+	renderer/renderer.c\
+	ini/init-fractal.c
   
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 

@@ -5,6 +5,7 @@ int render(t_env* env) {
     SDL_ShowWindow(env->pWindow);
     update_event(env);
     SDL_UpdateWindowSurface(env->pWindow);
+    mandelbrot(env);
   }
 
   SDL_DestroyWindow(env->pWindow);
