@@ -31,7 +31,6 @@ SRC_NAME=main.c\
 	render.c\
 	ini/check_parameters.c\
 	ini/window.c\
-	ini/key.c\
 	renderer/update_event.c
   
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))

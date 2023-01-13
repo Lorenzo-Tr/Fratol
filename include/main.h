@@ -57,6 +57,5 @@ int render(t_env* env);
 int window(t_env* env);
 void julia(t_env* env);
 void update_event(t_env* env);
-void key_init(t_env* env);
 
 #endif
