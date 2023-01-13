@@ -16,11 +16,20 @@ typedef struct s_parameters {
   char* name;
 } t_params;
 
+typedef struct s_fractal_coordinates {
+  float x_min;
+  float x_max;
+  float y_min;
+  float x_max;
+  float zoom;
+} t_fractal;
+
 typedef struct s_env {
   t_params parameters;
   unsigned char err_code;
   SDL_Window* pWindow;
   SDL_DisplayMode display;
+  t_fractal coordinates;
 } t_env;
 
 typedef struct s_complex {
