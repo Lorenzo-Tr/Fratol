@@ -1,19 +1,9 @@
 #include "main.h"
 
 int render(t_env* env) {
-  bool render_flags;
-
-  render_flags = true;
-  while (render_flags) {
-    SDL_Event event;
+  while (!env->input.key[KEY_ESCAPE] && !env->input.quit) {
     SDL_ShowWindow(env->pWindow);
-    while (SDL_PollEvent(&event)) {
-      switch (event.type) {
-        case SDL_QUIT:
-          render_flags = false;
-          break;
-      }
-    }
+    update_event(env);
     SDL_UpdateWindowSurface(env->pWindow);
   }
 

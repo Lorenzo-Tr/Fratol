@@ -24,7 +24,7 @@ typedef struct s_error {
 static const t_error errors[ERROR_MAX] = {
     [ERROR_INVALID_ARGC] = {"Invalid number of arguments.\n", true, false},
     [ERROR_HEIGTH] = {"This heigth is not allowed\n", true, false},
-    [ERROR_WIDTH] = {"This lengt is not allowed\n", true, false},
+    [ERROR_WIDTH] = {"This width is not allowed\n", true, false},
     [ERROR_NAME] = {"This name is unknown\n", true, false},
     [ERROR_SDL_INIT_VIDEO] = {"Initialization of SDL failed\n", false, true},
     [ERROR_SDL_INIT_WINDOW] = {"Initialization of SDL Window failed\n", false,
