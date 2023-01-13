@@ -19,6 +19,13 @@ void update_event(t_env* env) {
         if (event.key.keysym.sym == SDLK_SPACE)
           env->input.key[KEY_SPACE] = false;
         break;
+      case SDL_MOUSEWHEEL:
+        if(event.wheel.y == 1){
+          //zoom +1
+        }
+        if(event.wheel.y == -1){
+          //zoom -1
+        }
     }
   }
 }
