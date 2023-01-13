@@ -14,5 +14,7 @@ int init(int argc, char** argv, t_env* env) {
     return (env->err_code);
   }
 
+  init_fractal(env);
+
   return (0);
 }

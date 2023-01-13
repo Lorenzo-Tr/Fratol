@@ -16,6 +16,15 @@ typedef struct s_parameters {
   char* name;
 } t_params;
 
+typedef struct s_fractal_coordinates {
+  float x_min;
+  float x_max;
+  float y_min;
+  float y_max;
+  float zoom_w;
+  float zoom_h;
+} t_fractal;
+
 enum e_input {
   KEY_MIN,
   KEY_ESCAPE,
@@ -40,7 +49,9 @@ typedef struct s_env {
   t_params parameters;
   unsigned char err_code;
   SDL_Window* pWindow;
+  SDL_Surface* screenSurface;
   SDL_DisplayMode display;
+  t_fractal coordinates;
   t_input input;
 } t_env;
 
@@ -56,6 +67,10 @@ int init(int argc, char** argv, t_env* env);
 int render(t_env* env);
 int window(t_env* env);
 void julia(t_env* env);
+void mandelbrot(t_env* env);
 void update_event(t_env* env);
+void setBlack(t_env* env, int x, int y);
+void setWhite(t_env* env, int x, int y);
+void init_fractal(t_env* env);
 
 #endif
