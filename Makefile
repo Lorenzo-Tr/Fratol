@@ -26,7 +26,7 @@ endif
 SRC_PATH=src/
 SRC_NAME=main.c\
 	ini/check_parameters.c\
-	ini/init-fractal.c\
+	ini/init_fractal.c\
 	ini/window.c\
 	renderer/renderer.c\
 	renderer/update_event.c\
