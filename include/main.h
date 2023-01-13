@@ -45,6 +45,6 @@ int init(int argc, char** argv, t_env* env);
 int render(t_env* env);
 int window(t_env* env);
 void julia(t_env* env);
-void mandlebrot(t_env* env);
+void mandelbrot(t_env* env);
 
 #endif
