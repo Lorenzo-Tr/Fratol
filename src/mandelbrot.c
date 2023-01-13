@@ -6,7 +6,7 @@ int mandelbrot()
 	float x2 = 0.6;
 	float  y1 = -1.2;
 	float y2 = 1.2;
-	unsigned int image_width = 50;
+	unsigned int image_width = 100;
 	unsigned int image_height = 50;
 	int nb_iteration = 50;
 
