@@ -25,16 +25,16 @@ endif
 
 SRC_PATH=src/
 SRC_NAME=main.c\
-	fractal.c\
-	error.c\
-	init.c\
-	render.c\
 	ini/check_parameters.c\
+	ini/init-fractal.c\
 	ini/window.c\
-	renderer/update_event.c\
-	mandelbrot.c\
 	renderer/renderer.c\
-	ini/init-fractal.c
+	renderer/update_event.c\
+	error.c\
+	fractal.c\
+	generator.c\
+	init.c\
+	render.c	
   
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 

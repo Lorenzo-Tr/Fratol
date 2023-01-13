@@ -5,6 +5,8 @@ static void init_mandelbrot(t_env* env){
 	env->coordinates.x_max = 0.6;
 	env->coordinates.y_min = -1.2;
 	env->coordinates.y_max = 1.2;
+	env->coordinates.temp.real = 0;
+	env->coordinates.temp.imaginary = 0;
 }
 
 static void init_julia(t_env* env){
@@ -12,6 +14,8 @@ static void init_julia(t_env* env){
 	env->coordinates.x_max = 1;
 	env->coordinates.y_min = -1.2;
 	env->coordinates.y_max = 1.2;
+	env->coordinates.temp.real = 0.285;
+	env->coordinates.temp.imaginary = 0.01;
 	}
 
 static void init_zoom(t_env* env){

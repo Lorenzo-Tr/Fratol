@@ -9,6 +9,12 @@
 #include <unistd.h>
 
 #define POW(X) ((X) * (X))
+#define ITERATION_MAX 150
+
+typedef struct s_complex {
+  float real;
+  float imaginary;
+} t_complex;
 
 typedef struct s_parameters {
   unsigned int height;
@@ -23,6 +29,7 @@ typedef struct s_fractal_coordinates {
   float y_max;
   float zoom_w;
   float zoom_h;
+  t_complex temp;
 } t_fractal;
 
 enum e_input {
@@ -55,22 +62,21 @@ typedef struct s_env {
   t_input input;
 } t_env;
 
-typedef struct s_complex {
-  float real;
-  float imaginary;
-} t_complex;
-
-void error_handler(t_env* env);
+//src/init
 int check_parameters(t_env* env);
-int fractal(int argc, char** argv, t_env* env);
-int init(int argc, char** argv, t_env* env);
-int render(t_env* env);
+void init_fractal(t_env* env);
 int window(t_env* env);
-void julia(t_env* env);
-void mandelbrot(t_env* env);
-void update_event(t_env* env);
+
+//src/renderer
 void setBlack(t_env* env, int x, int y);
 void setWhite(t_env* env, int x, int y);
-void init_fractal(t_env* env);
+void update_event(t_env* env);
+
+//src
+void error_handler(t_env* env);
+int fractal(int argc, char** argv, t_env* env);
+int init(int argc, char** argv, t_env* env);
+void generator(t_env* env);
+int render(t_env* env);
 
 #endif
