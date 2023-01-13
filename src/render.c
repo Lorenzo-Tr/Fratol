@@ -5,7 +5,14 @@ int render(t_env* env) {
     SDL_ShowWindow(env->pWindow);
     update_event(env);
     SDL_UpdateWindowSurface(env->pWindow);
-    mandelbrot(env);
+    /*if(!strcmp(env->parameters.name, "Mandelbrot")){
+      mandelbrot(env);
+    } else if(!strcmp(env->parameters.name, "Julia")){
+      julia(env);
+    } else {
+      //Nothing
+    }*/
+    generator(env);
   }
 
   SDL_DestroyWindow(env->pWindow);
