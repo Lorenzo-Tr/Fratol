@@ -35,7 +35,7 @@ typedef struct s_env {
 
 typedef struct s_complex {
   float real;
-  float immaginary;
+  float imaginary;
 } t_complex;
 
 void error_handler(t_env* env);
