@@ -21,7 +21,8 @@ typedef struct s_fractal_coordinates {
   float x_max;
   float y_min;
   float x_max;
-  float zoom;
+  float zoom_w;
+  float zoom_h;
 } t_fractal;
 
 typedef struct s_env {
@@ -44,5 +45,6 @@ int init(int argc, char** argv, t_env* env);
 int render(t_env* env);
 int window(t_env* env);
 void julia(t_env* env);
+void mandlebrot(t_env* env);
 
 #endif
