@@ -72,5 +72,6 @@ void update_event(t_env* env);
 void setBlack(t_env* env, int x, int y);
 void setWhite(t_env* env, int x, int y);
 void init_fractal(t_env* env);
+void zoom(t_env* env, int zoom_direction);
 
 #endif

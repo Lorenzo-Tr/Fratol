@@ -20,12 +20,9 @@ void update_event(t_env* env) {
           env->input.key[KEY_SPACE] = false;
         break;
       case SDL_MOUSEWHEEL:
-        if(event.wheel.y == 1){
-          //zoom +1
-        }
-        if(event.wheel.y == -1){
-          //zoom -1
-        }
+        SDL_GetMouseState(&env->input.mousex, &env->input.mousey);
+        zoom(env, event.wheel.y);
+        break;
     }
   }
 }

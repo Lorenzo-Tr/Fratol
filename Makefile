@@ -34,7 +34,8 @@ SRC_NAME=main.c\
 	renderer/update_event.c\
 	mandelbrot.c\
 	renderer/renderer.c\
-	ini/init-fractal.c
+	ini/init-fractal.c\
+	renderer/zoom.c
   
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 
