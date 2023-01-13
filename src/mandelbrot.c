@@ -1,33 +1,32 @@
 #include"main.h"
 
-int mandelbrot()
+void mandelbrot(t_env* env)
 {
-	float  x1 = -2.1;
-	float x2 = 0.6;
-	float  y1 = -1.2;
-	float y2 = 1.2;
-	unsigned int image_width = 100;
-	unsigned int image_height = 50;
 	int nb_iteration = 50;
+	int iteration;
+	float z_r;
+	t_complex c;
+	t_complex z;
 
-	float zoom_width = (float)image_width/(x2-x1);
-	float zoom_height = (float)image_height/(y2-y1);
+	/*float zoom_width = (float)image_width/(x2-x1);
+	float zoom_height = (float)image_height/(y2-y1);*/
 
-	for(unsigned int i=0; i<image_width; i++)
+	for(unsigned int i=0; i<env->parameters.height; i++)
 	{
-		for(unsigned int j=0; j<image_height;j++)
+		for(unsigned int j=0; j<env->parameters.width;j++)
 		{
-			float c_reel = (float)i/zoom_width + x1;
-			float c_im = (float)j/zoom_height + y1;
-			float z_reel = 0;
-			float z_im = 0;
-			int iteration = 0;
 
-			while((POW(z_reel)+POW(z_im))<4 && (iteration < nb_iteration))
+			c.real = (float)j/env->coordinates.zoom_w + env->coordinates.x_min;
+			c.imaginary = (float)i/env->coordinate.zoom_h + env->coordinates.y_min;
+			z.real = 0;
+			z.imaginary = 0;
+			iteration = 0;
+
+			while((POW(z.real)+POW(z.imaginary))<4 && (iteration < nb_iteration))
 			{
-				float z_r = z_reel;
-				z_reel = POW(z_reel)-POW(z_im) + c_reel;
-				z_im = 2*z_im*z_r + c_im;
+				z_r = z.real;
+				z.real = POW(z.real)-POW(z.imaginary) + c.real;
+				z.imaginary = 2*z.imaginary*z_r + c.imaginary;
 				iteration++;
 			}
 
@@ -45,5 +44,4 @@ int mandelbrot()
 		}
 		printf("\n");
 	}
-	return 0;
 }
