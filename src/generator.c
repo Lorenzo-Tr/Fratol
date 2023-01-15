@@ -11,8 +11,8 @@ void generator(t_env* env){
 			if(!strcmp(env->parameters.name, "Mandelbrot")){
 				c.real = (float)j/env->coordinates.zoom_w + env->coordinates.x_min;
 				c.imaginary = (float)i/env->coordinates.zoom_h + env->coordinates.y_min;
-				z.real = 0;
-				z.imaginary = 0;
+				z.real = 0; //Secure this var
+				z.imaginary = 0; //Secure this var
 			} else if (!strcmp(env->parameters.name, "Julia")){
 				z.real = (float)j/env->coordinates.zoom_w + env->coordinates.x_min;
 				z.imaginary = (float)i/env->coordinates.zoom_h + env->coordinates.y_min;
@@ -35,6 +35,7 @@ void generator(t_env* env){
 			}
 			else{
 				setWhite(env, j, i);
+				
 			}
 		}
 	}

@@ -12,8 +12,8 @@
 #define ITERATION_MAX 150
 
 typedef struct s_colors{
-  unsigned char* rgb[3];
-  int nb_colors;
+  unsigned char*** rgb; //One for R, one for G and one for B
+  int nb_colors; //Number of colors in palette
 } t_colors;
 
 typedef struct s_complex {
@@ -64,6 +64,7 @@ typedef struct s_env {
   SDL_Surface* screenSurface;
   SDL_DisplayMode display;
   t_fractal coordinates;
+  t_colors colors;
   t_input input;
 } t_env;
 
